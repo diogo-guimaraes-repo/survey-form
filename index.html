@@ -11,21 +11,21 @@
 <main>
   <header class="header">
     <div id="title-box">
-      <h1 id="title">Client satisfaction Form</h1>
-      <p id="description">Thank you for your opinion!</p>
+      <h1 id="title">Mexican Restaurant Survey</h1>
+      <p id="description">Help us create a new restaurant!</p>
     </div>
   </header>
 
   <body>
     <form id="survey-form" class="form">
       <label id="name-label">Name:
-        <input type="text" id="name" placeholder="Enter your name" required />
+        <input class="form-element" type="text" id="name" placeholder="Enter your name" required />
       </label>
       <label id="email-label">E-mail:
-        <input type="email" id="email" placeholder="Enter your email" required />
+        <input class="form-element" type="email" id="email" placeholder="Enter your email" required />
       </label>
       <label id="number-label">Age (optional):
-        <input type="number" id="number" min="18" max="150" placeholder="Age" />
+        <input class="form-element" type="number" id="number" min="18" max="150" placeholder="Age" />
       </label>
       <div class="form-group">
         <p>What is your favourite food?</p>
@@ -35,15 +35,35 @@
           <option value="sushi">Sushi</option>
         </select>
       </div>
-      <div>
-        <p>Is soup good?</p>
+      <div class="form-element">
+        <p>Would you be a customer of a new Mexican restaurant?</p>
         <label>
-          <input name="user-recommend" value="definitely" type="radio" checked />Definitely
+          <input name="fav-food" value="definitely" type="radio" checked />Definitely
         </label>
         <label>
-          <input name="user-recommend" value="sort-of" type="radio" />Sort of
+          <input name="fav-food" value="Maybe" type="radio" />Maybe
+        </label>
+        <label>
+          <input name="fav-food" value="sort-of" type="radio" />No
         </label>
       </div>
+      <div class="form-element">
+        <p>Please select your favourite Mexican dishes:</p>
+        <label>
+          <input name="fav-mex-food" value="taco" type="checkbox" />Definitely
+        </label>
+        <label>
+          <input name="fav-mex-food" value="quisadilla" type="checkbox" />Maybe
+        </label>
+        <label>
+          <input name="fav-mex-food" value="burrito" type="checkbox" />No
+        </label>
+      </div>
+      <div class="form-element">
+        <p>Any suggestions for our grand opening?</p>
+        <textarea id="comments" placeholder="Enter your suggestions here..."></textarea>
+      </div>
+      <button type="submit" id="submit">Send Survey</button>
     </form>
   </body>
 </main>

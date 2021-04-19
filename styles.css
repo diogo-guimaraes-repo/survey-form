@@ -27,7 +27,12 @@ html {
     background: linear-gradient(42deg, rgba(255,255,255,1) 0%, rgba(180,212,227,1) 56%, rgba(113,174,232,1) 100%);
   }
 
-  input{
+  .form-element {
+    border-bottom: 2px solid#bebed2;
+    margin-bottom: 10px;
+  }
+
+  input, textarea{
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
@@ -37,11 +42,16 @@ html {
     border: 0;
     transition: all .3s;
     font-family:'Montserrat',sans-serif;
-    border-bottom: 2px solid#bebed2;
-    margin-bottom: 10px;
+
   }
 
   input[type="radio"] {
+    width: 10px;
+    color:#5a5a5a;
+    margin-right: 10px;
+  }
+
+  input[type="checkbox"] {
     width: 10px;
     color:#5a5a5a;
     margin-right: 10px;
@@ -115,7 +125,7 @@ html {
   .form {
     grid-area: content;
     width: 500px;
-    height: 800px;
+    height: 900px;
     background: #e6e6e6;
     border-radius: 8px;
     box-shadow: 0 0 40px -10px #000;
@@ -125,6 +135,13 @@ html {
     box-sizing: border-box;
     position: relative;
     font-family:'Montserrat',sans-serif;
+  }
+
+  @media (min-width: 480px) {
+    form {
+      padding: 2.5rem;
+      height: 500px;
+    }
   }
 
   #dropdown {
@@ -181,5 +198,22 @@ html {
     background-repeat: no-repeat;
     border-color: rgba(30, 108, 217, 0.8);
     outline: 0;
+  }
+
+  button {
+    float:right;
+    padding:8px 12px;
+    margin:8px 0 0;
+    font-family:'Montserrat',sans-serif;
+    border: 2px solid #78788c;
+    background: 0;
+    color:#5a5a6e;
+    cursor: pointer;
+    transition: all .3s;
+  }
+
+  button:hover {
+    background:#78788c;
+    color:#fff
   }
 
