@@ -1,18 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
 
 html {
     /* Setting a base font size of 10px give us easier rem calculations
        Info: 1rem === 10px, 1.5rem === 15px, 2rem === 20px and so forth
      */
-    font-family: 'Open Sans', sans-serif;
-    font-size: 10px;
-    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
     color: #f3f3f3;
   }
 
   body {
     display: grid;
-    font-size: 1.6rem;
     grid-template-areas:
     "header"
     "content";
@@ -21,23 +20,166 @@ html {
     grid-template-rows: auto 1fr;
     grid-gap: 1.5rem;
 
-    height: 100vh;
+    height: 150vh;
     margin: 0;
 
-    background: #536976;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #292E49, #536976);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #292E49, #536976); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: rgb(255,255,255);
+    background: linear-gradient(42deg, rgba(255,255,255,1) 0%, rgba(180,212,227,1) 56%, rgba(113,174,232,1) 100%);
+  }
+
+  input{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: none;
+    outline: none;
+    resize: none;
+    border: 0;
+    transition: all .3s;
+    font-family:'Montserrat',sans-serif;
+    border-bottom: 2px solid#bebed2;
+    margin-bottom: 10px;
+  }
+
+  input[type="radio"] {
+    width: 10px;
+    color:#5a5a5a;
+    margin-right: 10px;
+  }
+
+  input:focus {
+    border-bottom:2px solid #78788c
+  }
+
+  p , .form-group{
+    content: attr(type);
+    display: block;
+    margin: 5 8px 0 0;
+    font-size: 14px;
+    color:#5a5a5a;
+  }
+
+  label {
+    align-items: center;
+    margin-bottom: 0.5rem;
+    content: attr(type);
+    display: block;
+    margin: 5 8px 0 0;
+    font-size: 14px;
+    color:#5a5a5a;
+  }
+
+  .header {
+    height: 30vh;
+    background-image:  linear-gradient(to right bottom,
+    rgba(76, 216, 255, 0.8),
+    rgba(30, 108, 217, 0.8)),
+    url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8b2ZmaWNlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80');
+
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 20vh, 0 100%);
+  }
+
+  #title-box {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    color: #fff;
 
   }
 
   #title {
-    grid-area: header;
-    display: flex;
-    flex-direction: column;
-    margin: 50px 0 15px 0;
-    font-weight: bold;
+    text-transform: uppercase;
+  	backface-visibility: hidden;
+  	margin-bottom: 30px;
+    font-size: 26px;
+  	font-weight: 400;
+  	letter-spacing: 5px;
   }
 
-  h1{
-    font-size: 4rem;
+  #description {
+    margin-top: -20px;
+    font-size: 18px;
+  	font-weight: 700;
+  	letter-spacing: 7.4px;
+    color: #fff;
   }
+
+  .form {
+    grid-area: content;
+    width: 500px;
+    height: 800px;
+    background: #e6e6e6;
+    border-radius: 8px;
+    box-shadow: 0 0 40px -10px #000;
+    margin:calc(25vh - 220px) auto;
+    padding: 20px 30px;
+    max-width: calc(100vw-40px);
+    box-sizing: border-box;
+    position: relative;
+    font-family:'Montserrat',sans-serif;
+  }
+
+  #dropdown {
+    border-radius: 0.25rem;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  #dropdown:focus {
+    border-color: rgba(30, 108, 217, 0.8);
+  }
+
+  select {
+
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+    border: thin solid gray;
+    border-radius: 4px;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+    background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+    background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+    background-repeat: no-repeat;
+  }
+
+  select:focus {
+    background-image:
+    linear-gradient(45deg, rgba(30, 108, 217, 0.8) 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, rgba(30, 108, 217, 0.8) 50%),
+    linear-gradient(to right, #ccc, #ccc);
+    background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0.5em;
+    background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+    background-repeat: no-repeat;
+    border-color: rgba(30, 108, 217, 0.8);
+    outline: 0;
+  }
+

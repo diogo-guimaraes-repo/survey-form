@@ -8,6 +8,42 @@
   <title>Survey Form</title>
 </head>
 
-<body>
-  <h1 id="title">My Survey Form</h1>
-</body>
+<main>
+  <header class="header">
+    <div id="title-box">
+      <h1 id="title">Client satisfaction Form</h1>
+      <p id="description">Thank you for your opinion!</p>
+    </div>
+  </header>
+
+  <body>
+    <form id="survey-form" class="form">
+      <label id="name-label">Name:
+        <input type="text" id="name" placeholder="Enter your name" required />
+      </label>
+      <label id="email-label">E-mail:
+        <input type="email" id="email" placeholder="Enter your email" required />
+      </label>
+      <label id="number-label">Age (optional):
+        <input type="number" id="number" min="18" max="150" placeholder="Age" />
+      </label>
+      <div class="form-group">
+        <p>What is your favourite food?</p>
+        <select id="dropdown" class="form-group" required>
+          <option disabled selected value>Select your favourite food</option>
+          <option value="chicken">Chicken</option>
+          <option value="sushi">Sushi</option>
+        </select>
+      </div>
+      <div>
+        <p>Is soup good?</p>
+        <label>
+          <input name="user-recommend" value="definitely" type="radio" checked />Definitely
+        </label>
+        <label>
+          <input name="user-recommend" value="sort-of" type="radio" />Sort of
+        </label>
+      </div>
+    </form>
+  </body>
+</main>
